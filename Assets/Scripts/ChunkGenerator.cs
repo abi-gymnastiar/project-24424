@@ -19,8 +19,8 @@ public class ChunkGenerator : MonoBehaviour
 
     public int chunkWidth = 10;
     public int chunkHeight = 10;
-    private int chunkPosX = 0;
-    private int chunkPosY = 0;
+    //private int chunkPosX = 0;
+    //private int chunkPosY = 0;
 
 
     void Start()
@@ -39,68 +39,40 @@ public class ChunkGenerator : MonoBehaviour
 
     void GenerateLevel()
     {
-        int x = 0;
-        int prevX = 0;
-
-        // Loop through each cell of the tilemap and set the ground tile
-        for (int y = 0; y < height; y++)
+        List<Vector2Int> path = GenerateRandomPath();
+        foreach (Vector2Int cell in path)
         {
-            chunkPosY = y * chunkHeight;
-            while (x < width || x >= 0)
+            GenerateChunk(GetChunk(0), cell.x * chunkWidth, cell.y * chunkHeight);
+        }
+    }
+
+    private List<Vector2Int> GenerateRandomPath()
+    {
+        List<Vector2Int> path = new List<Vector2Int>();
+        int startX = 0; // Start X can be anywhere within the width
+        int startY = 0; // Start at the bottom
+        int endX = Random.Range(0, width); // End X can also be anywhere within the width
+        int endY = height; // End Y must be above startY
+
+        // Generate path
+        int currentX = startX;
+        int currentY = startY;
+        while (currentY < endY)
+        {
+            path.Add(new Vector2Int(currentX, currentY));
+            // Randomly decide whether to move left, right, or stay in the same column
+            int direction = Random.Range(-1, 2);
+            if (direction != 0) // Move horizontally
             {
-                chunkPosX = x * chunkWidth;
-                int randomChunkIndex = Random.Range(0, chunks.Count);
-                GenerateChunk(GetChunk(randomChunkIndex), chunkPosX, chunkPosY);
-                Debug.Log("Chunk grid generated: " + x + ", " + y);
-                // going up?
-                int random = Random.Range(0, 3);
-                Debug.Log("Random1: " + random);
-                if (random == 1 || (prevX < x && x == width-1) || (prevX > x && x == 0))
-                {
-                    prevX = x;
-                    break;
-                }
-                // going left or right?
-                if (prevX == x)
-                {
-                    if (x > 0 && x < width - 1)
-                    {
-                        random = Random.Range(0, 2);
-                        Debug.Log("Random2: " + random);
-                        if (random == 1)
-                        {
-                            prevX = x;
-                            x++;
-                        }
-                        else
-                        {
-                            prevX = x;
-                            x--;
-                        }
-                    }
-                    else if (x == 0)
-                    {
-                        prevX = x;
-                        x++;
-                    }
-                    else if (x == width - 1)
-                    {
-                        prevX = x;
-                        x--;
-                    }
-                }
-                else if (prevX < x)
-                {
-                    prevX = x;
-                    x++;
-                }
-                else if (prevX > x)
-                {
-                    prevX = x;
-                    x--;
-                }
+                currentX = Mathf.Clamp(currentX + direction, 0, width - 1);
+            }
+            else // Move vertically
+            {
+                currentY++;
             }
         }
+
+        return path;
     }
 
     private void GenerateChunk(Tilemap chunk, int x, int y)
@@ -113,7 +85,7 @@ public class ChunkGenerator : MonoBehaviour
                 TileBase tile = chunk.GetTile(new Vector3Int(i, j, 0));
                 // Set the tile at the current cell
                 tilemap.SetTile(new Vector3Int(x + i, y + j, 0), tile);
-                //Debug.Log("Tile position generated: " + (x + i) + ", " + (y + j));
+                Debug.Log("Tile position generated: " + (x + i) + ", " + (y + j));
             }
         }
     }
