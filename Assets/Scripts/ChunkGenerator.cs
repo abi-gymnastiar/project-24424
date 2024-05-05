@@ -19,6 +19,10 @@ public class ChunkGenerator : MonoBehaviour
 
     public int chunkWidth = 10;
     public int chunkHeight = 10;
+    //random
+    public string seed;
+    public bool useRandomSeed = true;
+
     //private int chunkPosX = 0;
     //private int chunkPosY = 0;
 
@@ -42,7 +46,9 @@ public class ChunkGenerator : MonoBehaviour
         List<Vector2Int> path = GenerateRandomPath();
         foreach (Vector2Int cell in path)
         {
-            GenerateChunk(GetChunk(0), cell.x * chunkWidth, cell.y * chunkHeight);
+            // random chunk index
+            int chunkIndex = Random.Range(0, 5);
+            GenerateChunk(GetChunk(chunkIndex), cell.x * chunkWidth, cell.y * chunkHeight);
         }
     }
 
@@ -84,6 +90,8 @@ public class ChunkGenerator : MonoBehaviour
                 // Get the tile at the current cell
                 TileBase tile = chunk.GetTile(new Vector3Int(i, j, 0));
                 // Set the tile at the current cell
+                
+                
                 tilemap.SetTile(new Vector3Int(x + i, y + j, 0), tile);
                 Debug.Log("Tile position generated: " + (x + i) + ", " + (y + j));
             }
