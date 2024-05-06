@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -83,19 +84,7 @@ public class ChunkGenerator : MonoBehaviour
 
     private void GenerateChunk(Tilemap chunk, int x, int y)
     {
-        for (int i = 0; i < chunkWidth; i++)
-        {
-            for (int j = 0; j < chunkHeight; j++)
-            {
-                // Get the tile at the current cell
-                TileBase tile = chunk.GetTile(new Vector3Int(i, j, 0));
-                // Set the tile at the current cell
-                
-                
-                tilemap.SetTile(new Vector3Int(x + i, y + j, 0), tile);
-                Debug.Log("Tile position generated: " + (x + i) + ", " + (y + j));
-            }
-        }
+        tilemap.SetTilesBlock(new BoundsInt(x, y, 0, chunkWidth, chunkHeight, 1), chunk.GetTilesBlock(new BoundsInt(0, 0, 0, chunkWidth, chunkHeight, 1)));
     }
 
     Tilemap GetChunk(int index)

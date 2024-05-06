@@ -7,9 +7,22 @@ public class Playercontroller : MonoBehaviour
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
 
+    private float collStandingHeight;
+    private float collStandingOffset;
+    private float collCrouchingHeight = 0.5f;
+    private float collCrouchingOffset = -0.15f;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Animator animator;
+    [SerializeField] private CapsuleCollider2D coll;
+
+    void Start()
+    {
+        collStandingHeight = coll.size.y;
+        collStandingOffset = coll.offset.y;
+    }
 
     void Update()
     {
@@ -23,6 +36,20 @@ public class Playercontroller : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+
+        // Crouching input
+        if (Input.GetButtonDown("Crouch"))
+        {
+            animator.SetBool("isCrouching", true);
+            coll.size = new Vector2(coll.size.x, collCrouchingHeight);
+            coll.offset = new Vector2(coll.offset.x, collCrouchingOffset);
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            animator.SetBool("isCrouching", false);
+            coll.size = new Vector2(coll.size.x, collStandingHeight);
+            coll.offset = new Vector2(coll.offset.x, collStandingOffset);
         }
 
         Flip();

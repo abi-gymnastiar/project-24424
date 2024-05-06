@@ -205,12 +205,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jumpingPower: 16
+  jumpingPower: 20
   rb: {fileID: 7372506753566192626}
   groundCheck: {fileID: 7026993140991901424}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  animator: {fileID: 5115034531884186601}
+  coll: {fileID: 7367294309911507468}
 --- !u!95 &5115034531884186601
 Animator:
   serializedVersion: 5
@@ -273,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1390357226, guid: 96ec68daa3d421c43b59f8569a81c909, type: 3}
+  m_Sprite: {fileID: -2002744696, guid: 0b1b370a3deb2f94698c649a56f240fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
