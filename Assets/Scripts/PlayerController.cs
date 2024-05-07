@@ -5,6 +5,7 @@ public class Playercontroller : MonoBehaviour
     private float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
+
     private bool isFacingRight = true;
 
     private float collStandingHeight;
@@ -27,6 +28,14 @@ public class Playercontroller : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal != 0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

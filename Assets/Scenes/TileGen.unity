@@ -535,9 +535,58 @@ MonoBehaviour:
   - {fileID: 8921116835306946419, guid: b6cfd51aeef3a4949aa269a0d94a1dcf, type: 3}
   - {fileID: 8921116835306946419, guid: 51e0b8602e575d647aa043766642fd79, type: 3}
   - {fileID: 8921116835306946419, guid: 80d486d1cfd0f8048be407df35c0fe95, type: 3}
-  corridors: []
-  openRoofLeftDoor: []
-  openRoofRightDoor: []
+  chunks_lr:
+  - {fileID: 8921116835306946419, guid: 9444e4964547b4842bd5b03fdc3160a9, type: 3}
+  - {fileID: 8921116835306946419, guid: bad2e81394a62264786b7597c009f1fd, type: 3}
+  - {fileID: 8921116835306946419, guid: 925372d412fd14a47af80a7edf3c681d, type: 3}
+  - {fileID: 8921116835306946419, guid: 348367154625ad243aafa46a5ced8d50, type: 3}
+  - {fileID: 8921116835306946419, guid: 69f2b3de03cb5b94aaf5691264fb26ff, type: 3}
+  - {fileID: 8921116835306946419, guid: 6c8e15670ed79764a96191550698ddd6, type: 3}
+  chunks_lt:
+  - {fileID: 8921116835306946419, guid: 65c034994d61ed8408ac5fe89614a6a2, type: 3}
+  - {fileID: 8921116835306946419, guid: 4b749f77989d98b49af6443981cb9cce, type: 3}
+  - {fileID: 8921116835306946419, guid: 486960d35972bf34da2bcbf5a69aaa23, type: 3}
+  - {fileID: 8921116835306946419, guid: 024a21f5efa2659478e6f5defd3af55c, type: 3}
+  chunks_rt:
+  - {fileID: 8921116835306946419, guid: 8c786afa52c05d446a78eae248a152a8, type: 3}
+  - {fileID: 8921116835306946419, guid: f1d636f2e0023bb46a7b680952d14305, type: 3}
+  - {fileID: 8921116835306946419, guid: 3743c57f1496b474bb3c7fd4d7e47170, type: 3}
+  chunks_lrt:
+  - {fileID: 8921116835306946419, guid: d1cae2330ce49d04cbfd0f675696078d, type: 3}
+  - {fileID: 8921116835306946419, guid: 1d211c5013ff8f54a894080625a33f69, type: 3}
+  - {fileID: 8921116835306946419, guid: 9f84d08a8e2ae3d4a838780f5ac4befe, type: 3}
+  - {fileID: 8921116835306946419, guid: c5dfd6ab633aaa04581186fffb23d721, type: 3}
+  - {fileID: 8921116835306946419, guid: 14d548dabe5556f42a9467b731030082, type: 3}
+  chunks_lrtb:
+  - {fileID: 8921116835306946419, guid: 4721e516eeaa5584e800f4240c9452c4, type: 3}
+  - {fileID: 8921116835306946419, guid: 8efaf02ad6d9d4c4c9e785e388eda524, type: 3}
+  - {fileID: 8921116835306946419, guid: b6cfd51aeef3a4949aa269a0d94a1dcf, type: 3}
+  - {fileID: 8921116835306946419, guid: 51e0b8602e575d647aa043766642fd79, type: 3}
+  - {fileID: 8921116835306946419, guid: 80d486d1cfd0f8048be407df35c0fe95, type: 3}
+  chunks_lb:
+  - {fileID: 8921116835306946419, guid: b9b9972fd3c070c458eabadae5e325c3, type: 3}
+  - {fileID: 8921116835306946419, guid: 5e3648d4c7985fb40abd331061c78f40, type: 3}
+  - {fileID: 8921116835306946419, guid: cb5196f55805a3d498bd8c8f648dbca3, type: 3}
+  - {fileID: 8921116835306946419, guid: 703009ad327febd418a254239fba69a1, type: 3}
+  - {fileID: 8921116835306946419, guid: 4b260dbeda1d42947908312497904271, type: 3}
+  chunks_rb:
+  - {fileID: 8921116835306946419, guid: c193453ecd83cbb4fa08c37fccc9d6d8, type: 3}
+  - {fileID: 8921116835306946419, guid: 96e335762c6b08b4388157b68a3428ca, type: 3}
+  - {fileID: 8921116835306946419, guid: d2b1ffe86c91da349b4fd72b5509ba78, type: 3}
+  - {fileID: 8921116835306946419, guid: fcd185be9006524408b3ab20f09ad626, type: 3}
+  - {fileID: 8921116835306946419, guid: 57621730b666add49b137c184a09f498, type: 3}
+  chunks_lrb:
+  - {fileID: 8921116835306946419, guid: 0d8ed0775ba102f4fbb89f3649ad8817, type: 3}
+  - {fileID: 8921116835306946419, guid: e6384f3f9761305489eec6eaa89f8ed9, type: 3}
+  - {fileID: 8921116835306946419, guid: ed89e78d0be189b448f519d78602c162, type: 3}
+  - {fileID: 8921116835306946419, guid: ac82aef65d2b882409077767a851c21d, type: 3}
+  - {fileID: 8921116835306946419, guid: ee1d184ce05df834ab1a5defbd7f0045, type: 3}
+  chunks_tb:
+  - {fileID: 8921116835306946419, guid: b4904b2bef72cb54ba4b7e44d23f3c75, type: 3}
+  - {fileID: 8921116835306946419, guid: ec25d17398a2faa42a34a171ee42ebe1, type: 3}
+  - {fileID: 8921116835306946419, guid: 021ac72add572da47b8dbf239025c998, type: 3}
+  - {fileID: 8921116835306946419, guid: 6fa33ecccb257de4c9d3729eb9bd630b, type: 3}
+  - {fileID: 8921116835306946419, guid: 06ef56610e32851419846549e5b5afc7, type: 3}
   chunkWidth: 20
   chunkHeight: 20
   seed: 
@@ -652,6 +701,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611680677212129343, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -728143447, guid: ed22e4f9655e8ba4c9cf50989db7f7de, type: 3}
+    - target: {fileID: 611680677212129343, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2697967480874584796, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
       propertyPath: m_Name
       value: Player

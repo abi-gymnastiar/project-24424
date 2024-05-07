@@ -14,9 +14,16 @@ public class ChunkGenerator : MonoBehaviour
     public int height = 3;
 
     public List<Tilemap> chunks = new List<Tilemap>();
-    public List<Tilemap> corridors = new List<Tilemap>();
-    public List<Tilemap> openRoofLeftDoor = new List<Tilemap>();
-    public List<Tilemap> openRoofRightDoor = new List<Tilemap>();
+
+    public List<Tilemap> chunks_lr = new List<Tilemap>();
+    public List<Tilemap> chunks_lt = new List<Tilemap>();
+    public List<Tilemap> chunks_rt = new List<Tilemap>();
+    public List<Tilemap> chunks_lrt = new List<Tilemap>();
+    public List<Tilemap> chunks_lrtb = new List<Tilemap>();
+    public List<Tilemap> chunks_lb = new List<Tilemap>();
+    public List<Tilemap> chunks_rb = new List<Tilemap>();
+    public List<Tilemap> chunks_lrb = new List<Tilemap>();
+    public List<Tilemap> chunks_tb = new List<Tilemap>();
 
     public int chunkWidth = 10;
     public int chunkHeight = 10;
@@ -50,6 +57,14 @@ public class ChunkGenerator : MonoBehaviour
             // random chunk index
             int chunkIndex = Random.Range(0, 5);
             GenerateChunk(GetChunk(chunkIndex), cell.x * chunkWidth, cell.y * chunkHeight);
+
+            // check previous and next cells
+            //bool hasLeft = path.Contains(new Vector2Int(cell.x - 1, cell.y));
+            //bool hasRight = path.Contains(new Vector2Int(cell.x + 1, cell.y));
+            //bool hasTop = path.Contains(new Vector2Int(cell.x, cell.y + 1));
+            //bool hasBottom = path.Contains(new Vector2Int(cell.x, cell.y - 1));
+
+            // generate chunk based on the surrounding cells
         }
     }
 
@@ -92,16 +107,40 @@ public class ChunkGenerator : MonoBehaviour
         return chunks[index];
     }
 
-    Tilemap GetChunkCorridor(int index)
+    Tilemap GetChunkLR(int index)
     {
-        return corridors[index];
+        return chunks_lr[index];
     }
-    Tilemap GetChunkOpenRoofLeftDoor(int index)
+    Tilemap GetChunkLT(int index)
     {
-        return openRoofLeftDoor[index];
+        return chunks_lt[index];
     }
-    Tilemap GetChunkOpenRoofRightDoor(int index)
+    Tilemap GetChunkRT(int index)
     {
-        return openRoofRightDoor[index];
+        return chunks_rt[index];
+    }
+    Tilemap GetChunkLRT(int index)
+    {
+        return chunks_lrt[index];
+    }
+    Tilemap GetChunkLRTB(int index)
+    {
+        return chunks_lrtb[index];
+    }
+    Tilemap GetChunkLB(int index)
+    {
+        return chunks_lb[index];
+    }
+    Tilemap GetChunkRB(int index)
+    {
+        return chunks_rb[index];
+    }
+    Tilemap GetChunkLRB(int index)
+    {
+        return chunks_lrb[index];
+    }
+    Tilemap GetChunkTB(int index)
+    {
+        return chunks_tb[index];
     }
 }
