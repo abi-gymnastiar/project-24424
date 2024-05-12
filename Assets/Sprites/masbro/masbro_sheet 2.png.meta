@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b1b370a3deb2f94698c649a56f240fa
+guid: 4876b18cb027e1a4382ddcaa0b465e23
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: masbro_spritesheet_0
+      name: masbro_sheet 2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eaa48777c8f55149a582fe23586db57
-      internalID: -2002744696
+      spriteID: ec18d91be52e4de46b1028f06c792327
+      internalID: 1279598688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_1
+      name: masbro_sheet 2_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2765b759648666f4fb910b6587b18f2d
-      internalID: -898262593
+      spriteID: ccfb9ea02f627904c95b3736afe707a0
+      internalID: -1395457224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_2
+      name: masbro_sheet 2_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14a86930317c144e9b694b4c150b9a7
-      internalID: -1566246267
+      spriteID: 499987fcfdd8c3f4c84d5b2863fb305d
+      internalID: -1580453695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_3
+      name: masbro_sheet 2_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +174,98 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca3904009807694e96b22ef4d901a29
-      internalID: 1887971507
+      spriteID: ebb3797f051c0a643bc55db544ad0517
+      internalID: -2142634835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_4
+      name: masbro_sheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045552d267193b148bd90465379a9167
+      internalID: -661276867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb628baf4cef22489c57eb3e328759e
+      internalID: 1050512890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd9f28fef1ed384d8f930f2c4211b77
+      internalID: 1069470970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5ffe71d18e0ef4cbd72805c1499444
+      internalID: -1557281000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_8
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dd9101f8577380439d70a7e7d7c6e34
-      internalID: 1953900836
+      spriteID: f6f571554de74874bb38cab377212570
+      internalID: -1122942585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_5
+      name: masbro_sheet 2_9
       rect:
         serializedVersion: 2
         x: 64
@@ -216,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238c7764113f83845a9d72b12503dbf4
-      internalID: -1007284512
+      spriteID: 5230bcc88e411f841b19a2d977d18370
+      internalID: 1495423363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_6
+      name: masbro_sheet 2_10
       rect:
         serializedVersion: 2
         x: 128
@@ -237,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07e370d373fc414ebb8e9ae113125b0
-      internalID: -84856600
+      spriteID: 0fc9cd9bec68834409bb671b7f325cc2
+      internalID: -725487351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_7
+      name: masbro_sheet 2_11
       rect:
         serializedVersion: 2
         x: 192
@@ -258,14 +342,98 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02b0d4d233814574d80302877490a510
-      internalID: 524526965
+      spriteID: 45624dc3b07c13a4ca71935bbe7ddde1
+      internalID: 2121508104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_8
+      name: masbro_sheet 2_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076140b5f7780c44b83f510ca0cd0077
+      internalID: -395234078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5642f846eb6ea8245a1f5676c99bdf0a
+      internalID: -1554025310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4de94d46d71504fbf4f949dee6dd00
+      internalID: -1190907614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775c4f477bb2b0c48a4697176fc70d3f
+      internalID: -1092404830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: masbro_sheet 2_16
       rect:
         serializedVersion: 2
         x: 0
@@ -279,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526e090f57949bd4fb48be462c32f20e
-      internalID: -1723433667
+      spriteID: 4c7ad69c149aa6646b252d4319c103c0
+      internalID: 759828298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_9
+      name: masbro_sheet 2_17
       rect:
         serializedVersion: 2
         x: 64
@@ -300,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8154c6270d219d543a46238967704989
-      internalID: -939864167
+      spriteID: 05671a8e181152a4db0d39bdefe7fada
+      internalID: 1413470494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_10
+      name: masbro_sheet 2_18
       rect:
         serializedVersion: 2
         x: 128
@@ -321,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b765a49d4385a04ca9ecce92ea408f1
-      internalID: -341712675
+      spriteID: ba4cdec7e14a6c647b10a42853e27936
+      internalID: 626926071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: masbro_spritesheet_11
+      name: masbro_sheet 2_19
       rect:
         serializedVersion: 2
         x: 192
@@ -342,8 +510,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e2b0512d217dca4badfda6a90a45c05
-      internalID: 1537990814
+      spriteID: 4b302b5fa4b9a9e4884d42e9f72eef23
+      internalID: 126084089
       vertices: []
       indices: 
       edges: []
@@ -359,18 +527,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      masbro_spritesheet_0: -2002744696
-      masbro_spritesheet_1: -898262593
-      masbro_spritesheet_10: -341712675
-      masbro_spritesheet_11: 1537990814
-      masbro_spritesheet_2: -1566246267
-      masbro_spritesheet_3: 1887971507
-      masbro_spritesheet_4: 1953900836
-      masbro_spritesheet_5: -1007284512
-      masbro_spritesheet_6: -84856600
-      masbro_spritesheet_7: 524526965
-      masbro_spritesheet_8: -1723433667
-      masbro_spritesheet_9: -939864167
+      masbro_sheet 2_0: 1279598688
+      masbro_sheet 2_1: -1395457224
+      masbro_sheet 2_10: -725487351
+      masbro_sheet 2_11: 2121508104
+      masbro_sheet 2_12: -395234078
+      masbro_sheet 2_13: -1554025310
+      masbro_sheet 2_14: -1190907614
+      masbro_sheet 2_15: -1092404830
+      masbro_sheet 2_16: 759828298
+      masbro_sheet 2_17: 1413470494
+      masbro_sheet 2_18: 626926071
+      masbro_sheet 2_19: 126084089
+      masbro_sheet 2_2: -1580453695
+      masbro_sheet 2_3: -2142634835
+      masbro_sheet 2_4: -661276867
+      masbro_sheet 2_5: 1050512890
+      masbro_sheet 2_6: 1069470970
+      masbro_sheet 2_7: -1557281000
+      masbro_sheet 2_8: -1122942585
+      masbro_sheet 2_9: 1495423363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

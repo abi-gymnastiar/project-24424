@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Playercontroller : MonoBehaviour
@@ -6,7 +7,13 @@ public class Playercontroller : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 16f;
 
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
+    private bool canDash = true;
+    private bool isDashing = false;
+
+    private float dashSpeed = 5f;
+    private float dashDuration = 0.1f;
+    private float dashCooldown = 0.5f;
 
     private float collStandingHeight;
     private float collStandingOffset;
@@ -16,6 +23,7 @@ public class Playercontroller : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject bulletSpawn;
     [SerializeField] private Animator animator;
     [SerializeField] private CapsuleCollider2D coll;
 
@@ -27,6 +35,11 @@ public class Playercontroller : MonoBehaviour
 
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         horizontal = Input.GetAxisRaw("Horizontal");
         if (horizontal != 0)
         {
@@ -61,11 +74,29 @@ public class Playercontroller : MonoBehaviour
             coll.offset = new Vector2(coll.offset.x, collStandingOffset);
         }
 
+        // Firing input
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.SetTrigger("shooting");
+            bulletSpawn.GetComponent<BulletSpawn>().SpawnBullet();
+        }
+
+        // Dashing input
+        if (Input.GetButtonDown("Dash") && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+
         Flip();
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
@@ -79,9 +110,22 @@ public class Playercontroller : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            transform.Rotate(0f, 180f, 0f);
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        canDash = false;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(rb.velocity.x * dashSpeed, rb.velocity.y);
+        yield return new WaitForSeconds(dashDuration);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        rb.velocity = new Vector2(rb.velocity.x / dashSpeed, rb.velocity.y);
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
