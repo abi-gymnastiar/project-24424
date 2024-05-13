@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6456690122798323716}
   - component: {fileID: 8921116835306946419}
   - component: {fileID: 7999799677766787184}
+  - component: {fileID: 3200652782911925046}
   m_Layer: 3
   m_Name: lrud 4
   m_TagString: Untagged
@@ -1418,3 +1419,17 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &3200652782911925046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302195898480020231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0c17d1adfcab54cbda4903723682ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnNPC:
+  - {x: 9, y: 9, z: 0}

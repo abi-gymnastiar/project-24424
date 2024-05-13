@@ -21,6 +21,8 @@ public class ChunkGenerator : MonoBehaviour
     public Tilemap entranceL;
     public Tilemap entranceR;
 
+    public List<GameObject> spawnableNPCs = new List<GameObject>();
+
     public List<Tilemap> chunks = new List<Tilemap>();
 
     public List<Tilemap> chunks_lr = new List<Tilemap>();
@@ -92,7 +94,10 @@ public class ChunkGenerator : MonoBehaviour
             if (hasLeft && hasRight && hasTop && hasBottom)
             {
                 int chunkIndex = Random.Range(0, chunks_lrt.Count);
-                GenerateChunk(GetChunkLRTB(chunkIndex), cell.x * chunkWidth, cell.y * chunkHeight);
+                Tilemap chunkTilemap = GetChunkLRTB(chunkIndex);
+                int chunkx = cell.x * chunkWidth; int chunky = cell.y * chunkHeight;
+                GenerateChunk(chunkTilemap, chunkx, chunky);
+                SpawnNPCs(chunkTilemap, chunkx, chunky);
             }
             else if (hasLeft && hasRight && hasTop)
             {
@@ -160,21 +165,6 @@ public class ChunkGenerator : MonoBehaviour
                 GenerateChunk(GetChunk(chunkIndex), cell.x * chunkWidth, cell.y * chunkHeight);
             }
         }
-        /*
-        foreach (Vector2Int cell in entrances)
-        {
-            // left entrance
-            if (path.Contains(new Vector2Int(cell.x + 1, cell.y)))
-            {
-                GenerateEntrance(-1, cell.x * chunkWidth, cell.y * chunkHeight);
-            }
-            // right entrance
-            else if (path.Contains(new Vector2Int(cell.x - 1, cell.y)))
-            {
-                GenerateEntrance(1, cell.x * chunkWidth, cell.y * chunkHeight);
-            }
-        }
-        */
     }
 
     private List<Vector2Int> GenerateRandomPath()
@@ -270,6 +260,17 @@ public class ChunkGenerator : MonoBehaviour
         else if (direction == 1)
         {
             tilemap.SetTilesBlock(new BoundsInt(x, y, 0, 5, 5, 1), entranceR.GetTilesBlock(new BoundsInt(0, 0, 0, 5, 5, 1)));
+        }
+    }
+
+    private void SpawnNPCs(Tilemap tm, int x, int y)
+    {
+        ChunkScript chunkScript = tm.GetComponent<ChunkScript>();
+        foreach (Vector3Int spawn in chunkScript.spawnNPC)
+        {
+            Debug.Log("Spawning: "+spawn.z+" at "+(x+spawn.x)+", "+(y+spawn.y));
+            GameObject npc = spawnableNPCs[spawn.z];
+            Instantiate(npc, new Vector3Int(x+spawn.x, y+spawn.y, 0), Quaternion.identity);
         }
     }
 

@@ -834,6 +834,9 @@ MonoBehaviour:
   chunkBg: {fileID: 8921116835306946419, guid: 8fc41296f6f1f454888c81e903a8a3b4, type: 3}
   entranceL: {fileID: 8921116835306946419, guid: 1013b1799597b8c449d92f054418cc54, type: 3}
   entranceR: {fileID: 8921116835306946419, guid: 850956782781f784e8e19f087147de51, type: 3}
+  spawnableNPCs:
+  - {fileID: 5434477286883773110, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
+  - {fileID: 2239961205189368403, guid: fea02b75b45a10745b5bd0ec6d8de74e, type: 3}
   chunks:
   - {fileID: 8921116835306946419, guid: 4721e516eeaa5584e800f4240c9452c4, type: 3}
   - {fileID: 8921116835306946419, guid: 8efaf02ad6d9d4c4c9e785e388eda524, type: 3}
@@ -910,6 +913,7 @@ MonoBehaviour:
   - {fileID: 8921116835306946419, guid: 81cc457ce80c35440b1ed49d2a70098f, type: 3}
   - {fileID: 8921116835306946419, guid: bb574a15c4ab95844b9e14789e13f45f, type: 3}
   - {fileID: 8921116835306946419, guid: 3224adb77ba14b843badc16bf9fcecfa, type: 3}
+  - {fileID: 8921116835306946419, guid: 57d0fa1199e15754e909b74d9cde3572, type: 3}
   chunks_r:
   - {fileID: 8921116835306946419, guid: a7d3a9f4ad9a3eb4e92658b8445299a2, type: 3}
   - {fileID: 8921116835306946419, guid: cc5f440a5068d6a479a2d5f5914e38b3, type: 3}
@@ -975,9 +979,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5091153395182922769, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5434477286883773110, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
       propertyPath: m_Name
       value: Soldier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007919634503990926, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007919634503990926, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8007919634503990926, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1032,6 +1048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611680677212129343, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2697967480874584796, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
       propertyPath: m_Name
       value: Player
