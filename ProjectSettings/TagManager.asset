@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tilemaps
   - Spawner
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX
