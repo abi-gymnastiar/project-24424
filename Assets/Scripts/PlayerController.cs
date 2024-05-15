@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletSpawn;
     [SerializeField] private Animator animator;
     [SerializeField] private CapsuleCollider2D coll;
+    private GameObject currentOneWayPlatform;
 
     void Start()
     {
@@ -74,6 +76,14 @@ public class PlayerController : MonoBehaviour
             coll.offset = new Vector2(coll.offset.x, collStandingOffset);
         }
 
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentOneWayPlatform != null)
+            {
+                StartCoroutine(DisableCollision());
+            }
+        }
+
         // Firing input
         if (Input.GetButtonDown("Fire1"))
         {
@@ -103,6 +113,32 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Player collided with " + collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        {
+            currentOneWayPlatform = collision.gameObject;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        {
+            currentOneWayPlatform = null;
+        }
+    }
+
+    private IEnumerator DisableCollision()
+    {
+        CompositeCollider2D platformCollider = currentOneWayPlatform.GetComponent<CompositeCollider2D>();
+
+        Physics2D.IgnoreCollision(coll, platformCollider);
+        yield return new WaitForSeconds(0.25f);
+        Physics2D.IgnoreCollision(coll, platformCollider, false);
     }
 
     private void Flip()

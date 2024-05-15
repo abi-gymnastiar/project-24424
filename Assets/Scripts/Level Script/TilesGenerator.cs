@@ -9,8 +9,12 @@ using UnityEngine.UI;
 public class TilesGenerator : MonoBehaviour
 {
     public Tilemap tilemap;
-    public Tile square;
+    public Tilemap platformTm;
+    //public Tile square;
     public Grid grid;
+    public RuleTile platformTile;
+    public RuleTile BorderTile;
+
 
     public int width = 50;
     public int height = 50;
@@ -30,9 +34,10 @@ public class TilesGenerator : MonoBehaviour
         if (GUI.Button(new Rect(10, 10, 100, 30), "Generate"))
         {
             tilemap.ClearAllTiles();
+            platformTm.ClearAllTiles();
             for (int i = 0; i < 6; i++)
             {
-                tilemap.SetTile(new Vector3Int(-i-1, -1, 0), square);
+                tilemap.SetTile(new Vector3Int(-i-1, -1, 0), platformTile);
             }
             GenerateLevel();
         }
@@ -70,7 +75,7 @@ public class TilesGenerator : MonoBehaviour
                 if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
                 {
                     Vector3Int tilePosition = new Vector3Int(x, y, 0);
-                    tilemap.SetTile(tilePosition, square);
+                    tilemap.SetTile(tilePosition, BorderTile);
                 }
                 else
                 {
@@ -80,7 +85,7 @@ public class TilesGenerator : MonoBehaviour
                     if (random < fillPercent)
                     {
                         Vector3Int tilePosition = new Vector3Int(x, y, 0);
-                        tilemap.SetTile(tilePosition, square);
+                        platformTm.SetTile(tilePosition, platformTile);
                     }
                 }
             }
@@ -96,11 +101,11 @@ public class TilesGenerator : MonoBehaviour
                 int neighbourWallTiles = GetSurroundingWallCount(x, y);
                 if (neighbourWallTiles > minWallsForSmooth)
                 {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), square);
+                    platformTm.SetTile(new Vector3Int(x, y, 0), platformTile);
                 }
                 else if (neighbourWallTiles < maxWallsForNull)
                 {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), null);
+                    platformTm.SetTile(new Vector3Int(x, y, 0), null);
                 }
             }
         }   
@@ -117,7 +122,7 @@ public class TilesGenerator : MonoBehaviour
                 {
                     if (neighbourX != gridX || neighbourY != gridY)
                     {
-                        if (tilemap.GetTile(new Vector3Int(neighbourX, neighbourY, 0)) == square)
+                        if (platformTm.GetTile(new Vector3Int(neighbourX, neighbourY, 0)) == platformTile)
                         {
                             wallCount++;
                         }
@@ -142,13 +147,13 @@ public class TilesGenerator : MonoBehaviour
                 for (int offsetX = -horizontalStretch; offsetX <= horizontalStretch; offsetX++)
                 {
                     int nx = Mathf.Clamp(x + offsetX, 0, width - 1);
-                    if (tilemap.GetTile(new Vector3Int(nx, y, 0)) == square)
+                    if (platformTm.GetTile(new Vector3Int(nx, y, 0)) == platformTile)
                     {
                         sum++;
                     }
                 }
                 // If the sum is greater than half the width of the stretch, set the tile
-                tilemap.SetTile(new Vector3Int(x, y, 0), sum > horizontalStretch ? square : null);
+                platformTm.SetTile(new Vector3Int(x, y, 0), sum > horizontalStretch ? platformTile : null);
             }
         }
     }

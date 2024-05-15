@@ -51,11 +51,11 @@ public class EnemyBehaviour : MonoBehaviour
         RaycastHit2D groundCheck = Physics2D.Raycast(patrolCheck.position, Vector2.down, 0.25f);
         // draw
         //Debug.DrawRay(patrolCheck.position, patrolCheck.right, Color.red);
-        Debug.DrawRay(patrolCheck.position, Vector2.down, Color.green);
+        //Debug.DrawRay(patrolCheck.position, Vector2.down, Color.green);
         if (wallCheck.collider != null)
         {
             // debug log what the raycast hit
-            Debug.Log(wallCheck.collider.name);
+            //Debug.Log(wallCheck.collider.name);
 
             if (wallCheck.collider.CompareTag("Tilemaps"))
             {

@@ -5,7 +5,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
 {
     private GameObject currentOneWayPlatform;
 
-    [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] private CapsuleCollider2D playerCollider;
 
     private void Update()
     {
