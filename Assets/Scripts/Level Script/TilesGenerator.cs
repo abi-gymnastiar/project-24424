@@ -28,6 +28,7 @@ public class TilesGenerator : MonoBehaviour
     public int maxWallsForNull = 4;
 
     public int horizontalStretch = 2;
+    public bool generateBorder = true;
 
     private void OnGUI()
     {
@@ -71,11 +72,24 @@ public class TilesGenerator : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                // border tiles
-                if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
+                if (generateBorder)
                 {
-                    Vector3Int tilePosition = new Vector3Int(x, y, 0);
-                    tilemap.SetTile(tilePosition, BorderTile);
+                    if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
+                    {
+                        Vector3Int tilePosition = new Vector3Int(x, y, 0);
+                        tilemap.SetTile(tilePosition, BorderTile);
+                    }
+                    else
+                    {
+                        // Generate a random number between 0 and 100
+                        int random = pseudoRandom.Next(0, 100);
+                        // If the random number is less than the fill percent, set the tile
+                        if (random < fillPercent)
+                        {
+                            Vector3Int tilePosition = new Vector3Int(x, y, 0);
+                            platformTm.SetTile(tilePosition, platformTile);
+                        }
+                    }
                 }
                 else
                 {

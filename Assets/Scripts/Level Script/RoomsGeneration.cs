@@ -237,8 +237,8 @@ public class RoomsGeneration : MonoBehaviour
 
     private void GenerateTheRoom(Vector2Int cell, GameObject room, Vector2Int roomPos)
     {
-        //Tilemap roomBgTilemap = room.GetComponentsInChildren<Tilemap>()[0];
-        //backGround.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), roomBgTilemap.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
+        Tilemap roomBgTilemap = room.GetComponentsInChildren<Tilemap>()[0];
+        backGround.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), roomBgTilemap.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
         Tilemap tm = room.GetComponentsInChildren<Tilemap>()[1];
         tilemap.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), tm.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
         // check if room has 3rd tilemap for platform
