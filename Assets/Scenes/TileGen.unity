@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_AssetsPPU
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6907261811235022219, guid: 304e14cec15218949b00e1d04025de1e, type: 3}
+      propertyPath: m_PixelSnapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -264,6 +268,7 @@ GameObject:
   - component: {fileID: 1920121145}
   - component: {fileID: 1920121148}
   - component: {fileID: 1920121144}
+  - component: {fileID: 1920121149}
   - component: {fileID: 1920121147}
   - component: {fileID: 1920121146}
   m_Layer: 0
@@ -290,13 +295,13 @@ MonoBehaviour:
   grid: {fileID: 2043905639}
   platformTile: {fileID: 11400000, guid: a9232ddb7b28e2448b004e003ffb78e1, type: 2}
   BorderTile: {fileID: 11400000, guid: a9232ddb7b28e2448b004e003ffb78e1, type: 2}
-  width: 100
-  height: 200
+  width: 140
+  height: 240
   seed: 
   useRandomSeed: 1
-  fillPercent: 47
-  minWallsForSmooth: 4
-  maxWallsForNull: 4
+  fillPercent: 40
+  minWallsForSmooth: 8
+  maxWallsForNull: 3
   horizontalStretch: 3
   generateBorder: 0
 --- !u!4 &1920121145
@@ -498,6 +503,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 0}
+  spawnChance: 100
+--- !u!114 &1920121149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920121143}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf775fb60c27e754da2c1236b28a307d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 2043905639}
+  backgrounds: {fileID: 9104338675011109634}
+  tm: {fileID: 8683161386240097259}
+  platforms: {fileID: 30986966447501468}
+  envTm: {fileID: 2030332538764262503}
+  groundRuleTile: {fileID: 11400000, guid: a9232ddb7b28e2448b004e003ffb78e1, type: 2}
+  width: 7
+  height: 12
+  roomWidth: 20
+  roomHeight: 20
+  seed: 
+  useRandomSeed: 1
+  buildingChunks:
+  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
+  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
+  store: {fileID: 1661065956762774328, guid: acc39bd72d3d5a9499355f1e8a7a7cbb, type: 3}
+  placeHolderForRooms: {fileID: 280189126730235570, guid: 15dbf9a90f422e14c8b77dcbd0e2add6, type: 3}
 --- !u!1 &2043905638
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,8 +577,8 @@ Transform:
   m_Children:
   - {fileID: 6153847120239191814}
   - {fileID: 1330367737059105121}
-  - {fileID: 4092251713644395836}
   - {fileID: 9072756870436602979}
+  - {fileID: 4092251713644395836}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &30986966447501468

@@ -50,6 +50,10 @@ public class TilesGenerator : MonoBehaviour
         {
             Stretch();
         }
+        if (GUI.Button(new Rect(10, 130, 100, 30), "Thicken"))
+        {
+            ThickenTile();
+        }
     }
 
     void Start()
@@ -149,6 +153,36 @@ public class TilesGenerator : MonoBehaviour
             }
         }
         return wallCount;
+    }
+
+    void ThickenTile()
+    {
+        // adding a tile if the tile doesnot have top and bottom neighbours
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (platformTm.GetTile(new Vector3Int(x, y, 0)) == platformTile)
+                {
+                    if (!HaveTopAndBottomNeighbours(x, y))
+                    {
+                        platformTm.SetTile(new Vector3Int(x, y-1, 0), platformTile);
+                    }
+                }
+            }
+        }
+    }
+
+    bool HaveTopAndBottomNeighbours(int gridX, int gridY)
+    {
+        if (gridX >= 0 && gridX < width && gridY >= 0 && gridY < height)
+        {
+            if (platformTm.GetTile(new Vector3Int(gridX, gridY + 1, 0)) == platformTile && platformTm.GetTile(new Vector3Int(gridX, gridY - 1, 0)) == platformTile)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void Stretch()

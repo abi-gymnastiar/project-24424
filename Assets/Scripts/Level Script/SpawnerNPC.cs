@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnerNPC : MonoBehaviour
 {
     public GameObject npc;
+    // spawn chance int with slider for the inspector
+    [Range(0, 100)] public int spawnChance = 100;
 
     public void SpawnNPC()
     {
