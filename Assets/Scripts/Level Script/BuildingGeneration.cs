@@ -28,7 +28,7 @@ public class BuildingGeneration : MonoBehaviour
     //private int currentFloor = 0;
 
     public List<GameObject> buildingChunks;
-    public GameObject store;
+    public List<GameObject> store;
     public GameObject placeHolderForRooms;
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,8 @@ public class BuildingGeneration : MonoBehaviour
             }
             else if (hasLeft)
             {
-                GenerateTheRoom(roomPos, store);
+                int index = Random.Range(0, store.Count);
+                GenerateTheRoom(roomPos, store[index]);
             }
         }
     }
