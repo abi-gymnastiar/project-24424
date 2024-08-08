@@ -1884,8 +1884,7 @@ GameObject:
   - component: {fileID: 1920121148}
   - component: {fileID: 1920121144}
   - component: {fileID: 1920121149}
-  - component: {fileID: 1920121147}
-  - component: {fileID: 1920121146}
+  - component: {fileID: 1920121150}
   m_Layer: 0
   m_Name: Scene Script
   m_TagString: Untagged
@@ -1905,20 +1904,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bb78f072c20814f9239887b1b41a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingGeneration: {fileID: 1920121149}
   tilemap: {fileID: 8683161386240097259}
   platformTm: {fileID: 8683161386240097259}
   grid: {fileID: 2043905639}
   platformTile: {fileID: 11400000, guid: a9232ddb7b28e2448b004e003ffb78e1, type: 2}
   BorderTile: {fileID: 11400000, guid: a9232ddb7b28e2448b004e003ffb78e1, type: 2}
-  width: 140
+  width: 160
   height: 240
   seed: 
   useRandomSeed: 1
-  fillPercent: 40
+  fillPercent: 42
   minWallsForSmooth: 8
   maxWallsForNull: 3
   horizontalStretch: 3
   generateBorder: 0
+  temp_y: 0
 --- !u!4 &1920121145
 Transform:
   m_ObjectHideFlags: 0
@@ -1928,183 +1929,12 @@ Transform:
   m_GameObject: {fileID: 1920121143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.023261, y: 3.7662973, z: 0.0015034261}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1920121146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920121143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1e1b96c6c0e4c40b4bf63101304aa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 8683161386240097259}
-  square: {fileID: 11400000, guid: 84d9a4580313bc648a024e492505b0ac, type: 2}
-  grid: {fileID: 2043905639}
-  width: 5
-  height: 10
-  bground: {fileID: 9104338675011109634}
-  chunkBg: {fileID: 8921116835306946419, guid: 8fc41296f6f1f454888c81e903a8a3b4, type: 3}
-  entranceL: {fileID: 8921116835306946419, guid: 1013b1799597b8c449d92f054418cc54, type: 3}
-  entranceR: {fileID: 8921116835306946419, guid: 850956782781f784e8e19f087147de51, type: 3}
-  spawnableNPCs:
-  - {fileID: 5434477286883773110, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
-  - {fileID: 2239961205189368403, guid: fea02b75b45a10745b5bd0ec6d8de74e, type: 3}
-  chunks:
-  - {fileID: 8921116835306946419, guid: 4721e516eeaa5584e800f4240c9452c4, type: 3}
-  - {fileID: 8921116835306946419, guid: 8efaf02ad6d9d4c4c9e785e388eda524, type: 3}
-  - {fileID: 8921116835306946419, guid: b6cfd51aeef3a4949aa269a0d94a1dcf, type: 3}
-  - {fileID: 8921116835306946419, guid: 51e0b8602e575d647aa043766642fd79, type: 3}
-  - {fileID: 8921116835306946419, guid: 80d486d1cfd0f8048be407df35c0fe95, type: 3}
-  chunks_lr:
-  - {fileID: 8921116835306946419, guid: 9444e4964547b4842bd5b03fdc3160a9, type: 3}
-  - {fileID: 8921116835306946419, guid: bad2e81394a62264786b7597c009f1fd, type: 3}
-  - {fileID: 8921116835306946419, guid: 925372d412fd14a47af80a7edf3c681d, type: 3}
-  - {fileID: 8921116835306946419, guid: 348367154625ad243aafa46a5ced8d50, type: 3}
-  - {fileID: 8921116835306946419, guid: 69f2b3de03cb5b94aaf5691264fb26ff, type: 3}
-  - {fileID: 8921116835306946419, guid: 6c8e15670ed79764a96191550698ddd6, type: 3}
-  chunks_lt:
-  - {fileID: 8921116835306946419, guid: 65c034994d61ed8408ac5fe89614a6a2, type: 3}
-  - {fileID: 8921116835306946419, guid: 4b749f77989d98b49af6443981cb9cce, type: 3}
-  - {fileID: 8921116835306946419, guid: 486960d35972bf34da2bcbf5a69aaa23, type: 3}
-  - {fileID: 8921116835306946419, guid: 024a21f5efa2659478e6f5defd3af55c, type: 3}
-  chunks_rt:
-  - {fileID: 8921116835306946419, guid: 8c786afa52c05d446a78eae248a152a8, type: 3}
-  - {fileID: 8921116835306946419, guid: f1d636f2e0023bb46a7b680952d14305, type: 3}
-  - {fileID: 8921116835306946419, guid: 3743c57f1496b474bb3c7fd4d7e47170, type: 3}
-  chunks_lrt:
-  - {fileID: 8921116835306946419, guid: d1cae2330ce49d04cbfd0f675696078d, type: 3}
-  - {fileID: 8921116835306946419, guid: 1d211c5013ff8f54a894080625a33f69, type: 3}
-  - {fileID: 8921116835306946419, guid: 9f84d08a8e2ae3d4a838780f5ac4befe, type: 3}
-  - {fileID: 8921116835306946419, guid: c5dfd6ab633aaa04581186fffb23d721, type: 3}
-  - {fileID: 8921116835306946419, guid: 14d548dabe5556f42a9467b731030082, type: 3}
-  chunks_lrtb:
-  - {fileID: 8921116835306946419, guid: 4721e516eeaa5584e800f4240c9452c4, type: 3}
-  - {fileID: 8921116835306946419, guid: 8efaf02ad6d9d4c4c9e785e388eda524, type: 3}
-  - {fileID: 8921116835306946419, guid: b6cfd51aeef3a4949aa269a0d94a1dcf, type: 3}
-  - {fileID: 8921116835306946419, guid: 51e0b8602e575d647aa043766642fd79, type: 3}
-  - {fileID: 8921116835306946419, guid: 80d486d1cfd0f8048be407df35c0fe95, type: 3}
-  chunks_lb:
-  - {fileID: 8921116835306946419, guid: b9b9972fd3c070c458eabadae5e325c3, type: 3}
-  - {fileID: 8921116835306946419, guid: 5e3648d4c7985fb40abd331061c78f40, type: 3}
-  - {fileID: 8921116835306946419, guid: cb5196f55805a3d498bd8c8f648dbca3, type: 3}
-  - {fileID: 8921116835306946419, guid: 703009ad327febd418a254239fba69a1, type: 3}
-  - {fileID: 8921116835306946419, guid: 4b260dbeda1d42947908312497904271, type: 3}
-  chunks_rb:
-  - {fileID: 8921116835306946419, guid: c193453ecd83cbb4fa08c37fccc9d6d8, type: 3}
-  - {fileID: 8921116835306946419, guid: 96e335762c6b08b4388157b68a3428ca, type: 3}
-  - {fileID: 8921116835306946419, guid: d2b1ffe86c91da349b4fd72b5509ba78, type: 3}
-  - {fileID: 8921116835306946419, guid: fcd185be9006524408b3ab20f09ad626, type: 3}
-  - {fileID: 8921116835306946419, guid: 57621730b666add49b137c184a09f498, type: 3}
-  chunks_lrb:
-  - {fileID: 8921116835306946419, guid: 0d8ed0775ba102f4fbb89f3649ad8817, type: 3}
-  - {fileID: 8921116835306946419, guid: e6384f3f9761305489eec6eaa89f8ed9, type: 3}
-  - {fileID: 8921116835306946419, guid: ed89e78d0be189b448f519d78602c162, type: 3}
-  - {fileID: 8921116835306946419, guid: ac82aef65d2b882409077767a851c21d, type: 3}
-  - {fileID: 8921116835306946419, guid: ee1d184ce05df834ab1a5defbd7f0045, type: 3}
-  chunks_tb:
-  - {fileID: 8921116835306946419, guid: b4904b2bef72cb54ba4b7e44d23f3c75, type: 3}
-  - {fileID: 8921116835306946419, guid: ec25d17398a2faa42a34a171ee42ebe1, type: 3}
-  - {fileID: 8921116835306946419, guid: 021ac72add572da47b8dbf239025c998, type: 3}
-  - {fileID: 8921116835306946419, guid: 6fa33ecccb257de4c9d3729eb9bd630b, type: 3}
-  - {fileID: 8921116835306946419, guid: 06ef56610e32851419846549e5b5afc7, type: 3}
-  chunks_ltb:
-  - {fileID: 8921116835306946419, guid: 016a164aa60bb0f42bd09e71005e42b9, type: 3}
-  - {fileID: 8921116835306946419, guid: 87d5ad7ce45935e45a44b4cefe422224, type: 3}
-  - {fileID: 8921116835306946419, guid: 045f568597082d14ea969d4df69e5529, type: 3}
-  - {fileID: 8921116835306946419, guid: 7275c0652b86a5c43a97eff27662011d, type: 3}
-  - {fileID: 8921116835306946419, guid: cf8a28e04a9e8cd4fbcdb30496a12811, type: 3}
-  chunks_rtb:
-  - {fileID: 8921116835306946419, guid: e041f6119a3b42047a082301eeb5bc12, type: 3}
-  - {fileID: 8921116835306946419, guid: f44a55a2d46de324da087e5aa796931f, type: 3}
-  - {fileID: 8921116835306946419, guid: 517875267d5e1884b9163dbbe8beccd3, type: 3}
-  - {fileID: 8921116835306946419, guid: 422f485d36806a943adfe0d86aecdd83, type: 3}
-  - {fileID: 8921116835306946419, guid: 79eb97d71af40574e91a614402fd50eb, type: 3}
-  chunks_l:
-  - {fileID: 8921116835306946419, guid: 94ce077f120154849a7e1875a24d05f4, type: 3}
-  - {fileID: 8921116835306946419, guid: 328268d5a5536de47a35af6fce46a47f, type: 3}
-  - {fileID: 8921116835306946419, guid: 81cc457ce80c35440b1ed49d2a70098f, type: 3}
-  - {fileID: 8921116835306946419, guid: bb574a15c4ab95844b9e14789e13f45f, type: 3}
-  - {fileID: 8921116835306946419, guid: 3224adb77ba14b843badc16bf9fcecfa, type: 3}
-  - {fileID: 8921116835306946419, guid: 57d0fa1199e15754e909b74d9cde3572, type: 3}
-  chunks_r:
-  - {fileID: 8921116835306946419, guid: a7d3a9f4ad9a3eb4e92658b8445299a2, type: 3}
-  - {fileID: 8921116835306946419, guid: cc5f440a5068d6a479a2d5f5914e38b3, type: 3}
-  - {fileID: 8921116835306946419, guid: 4851f0a61ba69274eaadc4980bd8641a, type: 3}
-  - {fileID: 8921116835306946419, guid: 5a320729209ee2c41b0e9c35fbcfa065, type: 3}
-  - {fileID: 8921116835306946419, guid: 84b33967520df544a94e22e320a3e63f, type: 3}
-  chunkWidth: 20
-  chunkHeight: 20
-  seed: 
-  useRandomSeed: 1
---- !u!114 &1920121147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920121143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7bf1e592b1ada46a218e58a55a3045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 2043905639}
-  tilemap: {fileID: 8683161386240097259}
-  backGround: {fileID: 9104338675011109634}
-  environment: {fileID: 2030332538764262503}
-  platform: {fileID: 30986966447501468}
-  bground: {fileID: 0}
-  roomBg: {fileID: 0}
-  entranceL: {fileID: 0}
-  entranceR: {fileID: 0}
-  rooms_lr:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  rooms_lt:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_rt:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_lrt:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_lrtb:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_lb:
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_rb:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  rooms_lrb:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  rooms_tb:
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_ltb:
-  - {fileID: 1661065956762774328, guid: 74511a6599de92e45957df56f4c9100d, type: 3}
-  rooms_rtb:
-  - {fileID: 1661065956762774328, guid: 60f9263e307c7b94a90b7b9de3fcff90, type: 3}
-  rooms_l:
-  - {fileID: 1661065956762774328, guid: 7ac74531d3e70954e96a7da7a66fc5fb, type: 3}
-  rooms_r:
-  - {fileID: 1661065956762774328, guid: 25c508b913e640140a7f4dfc7da275d2, type: 3}
-  rooms_wide:
-  - {fileID: 1661065956762774328, guid: 998e73f3480a47a468738f9137d94559, type: 3}
-  width: 5
-  height: 10
-  roomWidth: 20
-  roomHeight: 20
-  seed: 
-  useRandomSeed: 1
-  testRoom: {fileID: 1661065956762774328, guid: 985dc737316f7fd499aae8fc3940ab50, type: 3}
 --- !u!114 &1920121148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,7 +1956,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920121143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf775fb60c27e754da2c1236b28a307d, type: 3}
   m_Name: 
@@ -2153,6 +1983,21 @@ MonoBehaviour:
   - {fileID: 1661065956762774328, guid: 70a11f474fb2ca348ace714160eba3f2, type: 3}
   - {fileID: 1661065956762774328, guid: 6955301a2b5f7d24ea313adc1f7a1787, type: 3}
   placeHolderForRooms: {fileID: 280189126730235570, guid: 15dbf9a90f422e14c8b77dcbd0e2add6, type: 3}
+--- !u!114 &1920121150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920121143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fac75fa02572fb46ab2a424bb88ab74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3394332731101755271}
+  grid: {fileID: 2043905639}
+  tilesGenerator: {fileID: 0}
 --- !u!1 &1955277195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2635,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6216215823146691391, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
   m_PrefabInstance: {fileID: 3394332731101755267}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3394332731101755271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5729597281007091967, guid: 5e8541bf01320c84a86d8c2fe96a6bbf, type: 3}
+  m_PrefabInstance: {fileID: 3394332731101755267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605f0f546669b674aae657068f0683f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3528543007060382799
 PrefabInstance:
   m_ObjectHideFlags: 0

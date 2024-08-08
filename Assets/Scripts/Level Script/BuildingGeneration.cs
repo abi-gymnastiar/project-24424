@@ -31,14 +31,14 @@ public class BuildingGeneration : MonoBehaviour
     public List<GameObject> store;
     public GameObject placeHolderForRooms;
     // Start is called before the first frame update
-    void Start()
+/*    void Start()
     {
         GenerateBuildings();
-    }
+    }*/
 
-    private void GenerateBuildings()
+    public void GenerateBuildings(int height_start)
     {
-        List<Vector2Int> path = GeneratePath();
+        List<Vector2Int> path = GeneratePath(height_start);
         // loop the path list
         foreach (Vector2Int cell in path)
         {
@@ -86,13 +86,13 @@ public class BuildingGeneration : MonoBehaviour
         }
     }
 
-    private List<Vector2Int> GeneratePath()
+    private List<Vector2Int> GeneratePath(int height_start)
     {
         List<Vector2Int> path = new List<Vector2Int>();
         int startX = 0; // Start X can be anywhere within the width
-        int startY = 0; // Start at the bottom
+        int startY = height_start; // Start at the bottom
         //int endX = 0; // End X can also be anywhere within the width
-        int endY = height; // End Y must be above startY
+        int endY = height_start + height; // End Y must be above startY
 
         // Generate path
         int currentX = startX;
