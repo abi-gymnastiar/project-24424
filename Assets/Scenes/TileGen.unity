@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3394332731101755271}
   grid: {fileID: 2043905639}
-  tilesGenerator: {fileID: 0}
+  tilesGenerator: {fileID: 1920121144}
 --- !u!1 &1955277195
 GameObject:
   m_ObjectHideFlags: 0

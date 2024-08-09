@@ -31,7 +31,7 @@ public class TilesGenerator : MonoBehaviour
     public int horizontalStretch = 2;
     public bool generateBorder = true;
 
-    public int temp_y = 0;
+    public int y_pos = 0;
 
     private void OnGUI()
     {
@@ -85,7 +85,7 @@ public class TilesGenerator : MonoBehaviour
         // Loop through each cell of the tilemap and set the ground tile
         for (int x = 0; x < width; x++)
         {
-            for (int y = temp_y; y < temp_y + height; y++)
+            for (int y = y_pos; y < y_pos + height; y++)
             {
                 if (generateBorder)
                 {
@@ -125,7 +125,7 @@ public class TilesGenerator : MonoBehaviour
     {
         for (int x = 0; x < width; x++)
         {
-            for (int y = temp_y; y < temp_y + height; y++)
+            for (int y = y_pos; y < y_pos + height; y++)
             {
                 int neighbourWallTiles = GetSurroundingWallCount(x, y);
                 if (neighbourWallTiles > minWallsForSmooth)
@@ -147,7 +147,7 @@ public class TilesGenerator : MonoBehaviour
         {
             for (int neighbourY = gridY - 1; neighbourY <= gridY + 1; neighbourY++)
             {
-                if (neighbourX >= 0 && neighbourX < width && neighbourY >= 0 && neighbourY < temp_y + height)
+                if (neighbourX >= 0 && neighbourX < width && neighbourY >= 0 && neighbourY < y_pos + height)
                 {
                     if (neighbourX != gridX || neighbourY != gridY)
                     {
@@ -171,7 +171,7 @@ public class TilesGenerator : MonoBehaviour
         // adding a tile if the tile doesnot have top and bottom neighbours
         for (int x = 0; x < width; x++)
         {
-            for (int y = temp_y; y < temp_y + height; y++)
+            for (int y = y_pos; y < y_pos + height; y++)
             {
                 if (platformTm.GetTile(new Vector3Int(x, y, 0)) == platformTile)
                 {
@@ -187,7 +187,7 @@ public class TilesGenerator : MonoBehaviour
     bool HaveTopAndBottomNeighbours(int gridX, int gridY)
     {
         // check if the tile has top and bottom neighbours
-        if (gridX >= 0 && gridX < width && gridY >= temp_y && gridY < temp_y + height)
+        if (gridX >= 0 && gridX < width && gridY >= y_pos && gridY < y_pos + height)
         {
             if (platformTm.GetTile(new Vector3Int(gridX, gridY + 1, 0)) == platformTile && platformTm.GetTile(new Vector3Int(gridX, gridY - 1, 0)) == platformTile)
             {
@@ -201,7 +201,7 @@ public class TilesGenerator : MonoBehaviour
     {
         for (int x = 0; x < width; x++)
         {
-            for (int y = temp_y; y < temp_y + height; y++)
+            for (int y = y_pos; y < y_pos + height; y++)
             {
                 int sum = 0;
                 for (int offsetX = -horizontalStretch; offsetX <= horizontalStretch; offsetX++)

@@ -18,7 +18,7 @@ public class PlayerTracker : MonoBehaviour
         {
             floorHeightGen += 12;
             Debug.Log("generating");
-            tilesGenerator.temp_y += tilesGenerator.height;
+            tilesGenerator.y_pos += tilesGenerator.height;
             tilesGenerator.GenerateAndSmooth(floorHeightGen - 4);
         }
     }
