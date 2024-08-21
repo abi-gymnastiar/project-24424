@@ -7,6 +7,7 @@ TagManager:
   - Tilemaps
   - Spawner
   - OneWayPlatform
+  - ItemPickup
   layers:
   - Default
   - TransparentFX

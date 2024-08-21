@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private float collCrouchingHeight = 0.5f;
     private float collCrouchingOffset = -0.15f;
 
+    public float damageBuff = 0f;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
