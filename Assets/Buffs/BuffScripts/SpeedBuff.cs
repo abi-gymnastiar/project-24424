@@ -6,7 +6,7 @@ public class SpeedBuff : BuffEffects
 {
     public override void BuffEffect(PlayerController player)
     {
-        player.speed *= 3;
+        player.speed += 2;
         Debug.Log("Speed buff effect");
     }
 }

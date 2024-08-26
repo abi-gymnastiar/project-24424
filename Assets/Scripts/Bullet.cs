@@ -5,7 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-    public int damage = 2;
+    public int damage = 1;
+    public int additionalDamage = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Bullet collided with " + collision.name);
+        Debug.Log("Bullet collided with " + collision.name + ".. dmg = " + (damage + additionalDamage));
         Entity entity = collision.GetComponent<Entity>();
         if (entity != null)
         {
-            entity.TakeDamage(damage);
+            entity.TakeDamage(damage + additionalDamage);
         }
 
         // Destroy the bullet when it collides with something

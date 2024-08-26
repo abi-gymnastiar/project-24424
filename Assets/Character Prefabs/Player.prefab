@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281026291550428144}
   - component: {fileID: 6787359065168035684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 2695962974235349724}
   - component: {fileID: 7289791282973251993}
   - component: {fileID: 7944117422984454685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SparkEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 5729597281007091967}
   - component: {fileID: 5115034531884186601}
   - component: {fileID: 611680677212129343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   speed: 8
   jumpingPower: 20
   isFacingRight: 1
-  bulletPrefab: {fileID: 7607274899684732181, guid: 52fa674fc03699a4db40c31216beca92, type: 3}
+  damageBuff: 0
   rb: {fileID: 7372506753566192626}
   groundCheck: {fileID: 7026993140991901424}
   groundLayer:
@@ -359,7 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7026993140991901424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

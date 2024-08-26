@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class ItemBuffMaster : MonoBehaviour
 {
-    public Collider2D col;
+    public Collider2D trigCol;
     public BuffEffects buffEffects;
-    
+
+    private void Start()
+    {
+        Invoke("EnableTriggerCollider", 0.5f);
+    }
+
+    private void EnableTriggerCollider()
+    {
+        trigCol.enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

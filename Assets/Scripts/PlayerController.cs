@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
     private float collCrouchingHeight = 0.5f;
     private float collCrouchingOffset = -0.15f;
 
-    public float damageBuff = 0f;
+    public int damageBuff = 0;
+    public int coins = 0;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletSpawn;
     [SerializeField] private Animator animator;
     [SerializeField] private CapsuleCollider2D coll;
+    [SerializeField] private BoxCollider2D interactCollider;
     private GameObject currentOneWayPlatform;
 
     void Start()
@@ -90,13 +93,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("shooting");
-            bulletSpawn.GetComponent<BulletSpawn>().SpawnBullet();
+            bulletSpawn.GetComponent<BulletSpawn>().SpawnBullet(damageBuff);
         }
 
         // Dashing input
         if (Input.GetButtonDown("Dash") && canDash)
         {
             StartCoroutine(Dash());
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(interactCollider.bounds.center, interactCollider.bounds.size, 0f);
+            foreach (Collider2D hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("Interactables"))
+                {
+                    hitCollider.GetComponent<Interactables>().Interact();
+                }
+            }
         }
 
         Flip();
