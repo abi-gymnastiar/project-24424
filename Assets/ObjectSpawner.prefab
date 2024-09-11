@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1880096645793789901}
   - component: {fileID: 4541302527559933133}
   m_Layer: 0
-  m_Name: NPC Spawner
+  m_Name: ObjectSpawner
   m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8663cde5d0edcc24d953b587e09fe003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObject: {fileID: 5434477286883773110, guid: c6b9876a5543817459cbe0a9e9632a5e, type: 3}
+  spawnObject: {fileID: 6247691223270350133, guid: fe12b2947e4124c46adbc259e2210ce5, type: 3}
   spawnChance: 50

@@ -90,6 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf139e9388f6c7c4b8d43f856351773a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  item: {fileID: 0}
+  price: 20
   openChestSprite: {fileID: 21300000, guid: 4e20dfe71ab41834cb5b1d5afa3de306, type: 3}
+  itemList:
+  - {fileID: 4584544086254452814, guid: d5f13f3b633cf324389cef27e520bad9, type: 3}
+  - {fileID: 8425085959519303996, guid: 9eaae354592a2cd42a0595879ea0e450, type: 3}
+  - {fileID: 5613411234658417916, guid: 9e652b537f135174bbcd555d8421da74, type: 3}

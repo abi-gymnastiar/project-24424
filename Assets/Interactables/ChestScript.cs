@@ -6,11 +6,9 @@ public class ChestScript : Interactables
 {
     public int price = 0;
     private PlayerController player;
-    public GameObject item;
     private SpriteRenderer spriteRenderer;
     public Sprite openChestSprite;
     public List<GameObject> itemList = new List<GameObject>();
-    public Dictionary<string, int> items = new Dictionary<string, int>();
 
     private void Start()
     {
@@ -24,7 +22,9 @@ public class ChestScript : Interactables
         if (player.coins >= price)
         {
             player.coins -= price;
-            GameObject itemInstance = Instantiate(item, transform.position, Quaternion.identity);
+            GameObject itemInstance = Instantiate(
+                itemList[Random.Range(0, itemList.Count)], transform.position, Quaternion.identity
+            );
             // Launch item
             itemInstance.GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 30), ForceMode2D.Impulse);
             spriteRenderer.sprite = openChestSprite;

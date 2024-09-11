@@ -104,7 +104,7 @@ public class BuildingGeneration : MonoBehaviour
             visitedCells.Add(new Vector2Int(currentX, currentY));
 
             // Randomly decide whether to move left, right, or stay in the same column
-            int direction = Random.Range(0, 2);
+            int direction = Random.Range(0, 2); // 0 = left, 1 = right
             if (direction == 0)
             {
                 if (currentX > 1)
@@ -152,9 +152,9 @@ public class BuildingGeneration : MonoBehaviour
                 }
             }
             int randomY = Random.Range(2, 5);
-            if (currentY+randomY < endY)
+            if (currentY+randomY < endY) // Check if the path will go out of bounds
             {
-                for (int i = 0; i < randomY; i++)
+                for (int i = 1; i < randomY; i++)
                 {
                     path.Add(new Vector2Int(currentX, currentY+i));
                     visitedCells.Add(new Vector2Int(currentX, currentY));
@@ -193,10 +193,10 @@ public class BuildingGeneration : MonoBehaviour
         tm.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), concreteTm.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
         Tilemap platformTm = room.GetComponentsInChildren<Tilemap>()[2];
         platforms.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), platformTm.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
-        List<SpawnerNPC> spawner = room.GetComponentsInChildren<SpawnerNPC>().ToList();
-        foreach (SpawnerNPC s in spawner)
+        List<ObjectSpawner> spawner = room.GetComponentsInChildren<ObjectSpawner>().ToList();
+        foreach (ObjectSpawner s in spawner)
         {
-            s.SpawnNPC(roomPos.x, roomPos.y);
+            s.SpawnObject(roomPos.x, roomPos.y);
         }
     }
 }

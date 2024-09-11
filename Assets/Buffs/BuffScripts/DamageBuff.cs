@@ -7,5 +7,6 @@ public class DamageBuff : BuffEffects
     public override void BuffEffect(PlayerController player)
     {
         player.damageBuff += 1;
+        Debug.Log("Damage buffed");
     }
 }

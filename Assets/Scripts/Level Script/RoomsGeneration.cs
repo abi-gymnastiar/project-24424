@@ -247,10 +247,10 @@ public class RoomsGeneration : MonoBehaviour
             Tilemap platTm = room.GetComponentsInChildren<Tilemap>()[2];
             platform.SetTilesBlock(new BoundsInt(roomPos.x, roomPos.y, 0, roomWidth, roomHeight, 1), platTm.GetTilesBlock(new BoundsInt(0, 0, 0, roomWidth, roomHeight, 1)));
         }
-        List<SpawnerNPC> spawner = room.GetComponentsInChildren<SpawnerNPC>().ToList();
-        foreach (SpawnerNPC s in spawner)
+        List<ObjectSpawner> spawner = room.GetComponentsInChildren<ObjectSpawner>().ToList();
+        foreach (ObjectSpawner s in spawner)
         {
-            s.SpawnNPC(roomPos.x, roomPos.y);
+            s.SpawnObject(roomPos.x, roomPos.y);
         }
     }
     private void GenerateTheRoom(Vector2Int cell, GameObject room, Vector2Int roomPos, int width, int height)

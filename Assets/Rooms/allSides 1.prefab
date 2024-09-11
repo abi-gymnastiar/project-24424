@@ -30,8 +30,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1310270968394487435}
-  - {fileID: 5066602539974313590}
-  - {fileID: 579890227155522715}
+  - {fileID: 4526609453564559731}
+  - {fileID: 4999689030828149477}
+  - {fileID: 4479664864092652471}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2220720473860180724
@@ -6570,7 +6571,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!1001 &1304740863244657494
+--- !u!1001 &2611391266931061882
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6580,7 +6581,139 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17
+      value: 14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527076218532914978, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_Name
+      value: NPC Spawner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+--- !u!4 &4479664864092652471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+  m_PrefabInstance: {fileID: 2611391266931061882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2650032619748931262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7670351285446730562}
+    m_Modifications:
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541302527559933133, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: spawnChance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541302527559933133, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: spawnObject
+      value: 
+      objectReference: {fileID: 6247691223270350133, guid: fe12b2947e4124c46adbc259e2210ce5, type: 3}
+    - target: {fileID: 7527076218532914978, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+      propertyPath: m_Name
+      value: ObjectSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+--- !u!4 &4526609453564559731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1880096645793789901, guid: 86337abb18ae4eb4db916ba6dbfde464, type: 3}
+  m_PrefabInstance: {fileID: 2650032619748931262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6878412111389457704
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7670351285446730562}
+    m_Modifications:
+    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.5
       objectReference: {fileID: 0}
     - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6618,76 +6751,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4541302527559933133, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: spawnChance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7527076218532914978, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_Name
-      value: NPC Spawner (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
---- !u!4 &579890227155522715 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-  m_PrefabInstance: {fileID: 1304740863244657494}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6649355782325531067
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 7670351285446730562}
-    m_Modifications:
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541302527559933133, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-      propertyPath: spawnChance
-      value: 61
-      objectReference: {fileID: 0}
     - target: {fileID: 7527076218532914978, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
       propertyPath: m_Name
       value: NPC Spawner
@@ -6697,8 +6760,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
---- !u!4 &5066602539974313590 stripped
+--- !u!4 &4999689030828149477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1880096645793789901, guid: 68d75bf04304037419bd29e137d91e2d, type: 3}
-  m_PrefabInstance: {fileID: 6649355782325531067}
+  m_PrefabInstance: {fileID: 6878412111389457704}
   m_PrefabAsset: {fileID: 0}
