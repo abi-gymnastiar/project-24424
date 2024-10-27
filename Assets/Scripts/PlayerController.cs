@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public int startingMaxHealth = 4;
+    public int maxHealth = 4;
+    public int health;
     private float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
@@ -24,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     public int damageBuff = 0;
     public int coins = 0;
+    // text UI for coins using legacy UI
+    [SerializeField] private UnityEngine.UI.Text coinsText;
+    [SerializeField] private GameObject healthPanel;
+    [SerializeField] private GameObject healthImage;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -32,12 +40,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private CapsuleCollider2D coll;
     [SerializeField] private BoxCollider2D interactCollider;
+    public PlayerBuffs playerBuffs;
     private GameObject currentOneWayPlatform;
+
+    // coyote time
+    public float coyoteTime = 0.2f;
+    private float coyoteCounter;
 
     void Start()
     {
+        maxHealth = startingMaxHealth;
+        health = maxHealth;
+        playerBuffs = GetComponent<PlayerBuffs>();
         collStandingHeight = coll.size.y;
         collStandingOffset = coll.offset.y;
+        UpdateCoins();
+        UpdateHealth();
     }
 
     void Update()
@@ -57,7 +75,20 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        // onAir
+        animator.SetFloat("yVelocity", rb.velocity.y);
+
+        // coyote time
+        if (IsGrounded())
+        {
+            coyoteCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump") && coyoteCounter > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
@@ -65,6 +96,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+            coyoteCounter = 0f;
         }
 
         // Crouching input
@@ -179,5 +212,24 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x / dashSpeed, rb.velocity.y);
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void UpdateCoins()
+    {
+        coinsText.text = coins.ToString();
+    }
+
+    public void UpdateHealth()
+    {
+        // Clear the health panel
+        foreach (Transform child in healthPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        for (int i = 0; i < health; i++)
+        {
+            Image image = Instantiate(healthImage, healthPanel.transform).GetComponent<Image>();
+            image.transform.SetParent(healthPanel.transform);
+        }
     }
 }

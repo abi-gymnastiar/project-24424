@@ -57,6 +57,11 @@ public class TilesGenerator : MonoBehaviour
         {
             ThickenTile();
         }
+        if (GUI.Button(new Rect(10, 170, 100, 30), "Restart Map"))
+        {
+            // reload the scene
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     }
 
     void Start()

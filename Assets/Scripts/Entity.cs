@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public int maxHealth = 10;
+    private PlayerController player;
+    public int coinsDrop = 5;
+    public int startingMaxHealth = 4;
+    public int maxHealth = 4;
     public int health;
     public int attack;
     public int defense;
@@ -17,7 +20,10 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // find player in the scene
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        maxHealth = startingMaxHealth;
         health = maxHealth;
     }
 
@@ -43,6 +49,8 @@ public class Entity : MonoBehaviour
 
     public void Die()
     {
+        player.coins += coinsDrop;
+        player.UpdateCoins();
         Destroy(gameObject);
     }
 

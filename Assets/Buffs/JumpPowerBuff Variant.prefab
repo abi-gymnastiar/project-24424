@@ -52,6 +52,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206613616488315218, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 467dae455a9c3f64b97a4f05f2578fea, type: 3}
+    - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 9016578754960776103, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: buffEffects
       value: 
@@ -81,3 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbe114587c61bf4eb3270e766631d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffName: 
+  buffValue: 0
+  buffSprite: {fileID: 21300000, guid: 467dae455a9c3f64b97a4f05f2578fea, type: 3}
