@@ -14,8 +14,11 @@ public class Entity : MonoBehaviour
     public float speed = 4;
     public int horizontal;
     public bool isFacingRight = true;
+    public bool isFacingPlayer = false;
 
     public Rigidbody2D rb;
+
+    private Vector3 startingScale;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         maxHealth = startingMaxHealth;
         health = maxHealth;
+        startingScale = transform.localScale;
     }
 
     private void Update()
@@ -36,6 +40,18 @@ public class Entity : MonoBehaviour
     {
         // Move the enemy
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        if (isFacingPlayer)
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                gameObject.transform.localScale = new Vector3 (-1 * startingScale.x, startingScale.y, startingScale.z);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(startingScale.x, startingScale.y, startingScale.z);
+            }
+        }
     }
 
     public void TakeDamage (int damage)

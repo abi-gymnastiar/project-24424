@@ -29,12 +29,15 @@ public class BuildingGeneration : MonoBehaviour
 
     public List<GameObject> buildingChunks;
     public List<GameObject> store;
+    public GameObject firstRoomChunk;
     public GameObject placeHolderForRooms;
+
+    private bool hasGeneratedOnce = false;
     // Start is called before the first frame update
-/*    void Start()
-    {
-        GenerateBuildings();
-    }*/
+    /*    void Start()
+        {
+            GenerateBuildings();
+        }*/
 
     public void GenerateBuildings(int height_start)
     {
@@ -44,6 +47,7 @@ public class BuildingGeneration : MonoBehaviour
         {
             Debug.Log(cell);
         }
+        bool flag = false; // flag for the first room
         foreach (Vector2Int cell in path)
         {
             // check previous and next cells
@@ -53,7 +57,7 @@ public class BuildingGeneration : MonoBehaviour
             bool hasBottom = path.Contains(new Vector2Int(cell.x, cell.y - 1));
             Vector2Int roomPos = new Vector2Int(cell.x * roomWidth, cell.y * roomHeight);
 
-            if (!hasBottom)
+            if (!hasBottom) // if there is no bottom, we will generate a room
             {
                 for (int y = roomPos.y; y > roomPos.y - 5; y--)
                 {
@@ -72,8 +76,15 @@ public class BuildingGeneration : MonoBehaviour
                         tm.SetTile(new Vector3Int(x, y, 0), groundRuleTile);
                     }
                 }
-            } 
-            if (hasBottom || hasTop)
+            }
+            if (!flag && hasGeneratedOnce)
+            {
+                flag = true;
+                // generate the first room
+                GenerateTheRoom(roomPos, firstRoomChunk);
+                // destroy all 
+            }
+            else if (hasBottom || hasTop)
             {
                 int index = Random.Range(0, buildingChunks.Count);
                 GenerateTheRoom(roomPos, buildingChunks[index]);
@@ -84,6 +95,7 @@ public class BuildingGeneration : MonoBehaviour
                 GenerateTheRoom(roomPos, store[index]);
             }
         }
+        hasGeneratedOnce = true;
     }
 
     private List<Vector2Int> GeneratePath(int height_start)
