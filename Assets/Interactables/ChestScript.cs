@@ -10,12 +10,15 @@ public class ChestScript : Interactables
     public Sprite openChestSprite;
     public List<GameObject> itemList = new List<GameObject>();
     private bool isOpen = false;
+    private TextMesh textMesh;
 
     private void Start()
     {
         // Get playercontroller from the scene
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        textMesh = transform.GetChild(0).GetComponent<TextMesh>();
+        textMesh.text = "$" + price.ToString();
     }
 
     public override void Interact()
@@ -31,6 +34,7 @@ public class ChestScript : Interactables
             itemInstance.GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 30), ForceMode2D.Impulse);
             spriteRenderer.sprite = openChestSprite;
             isOpen = true;
+            textMesh.text = "";
         }
         else if (isOpen)
         {
