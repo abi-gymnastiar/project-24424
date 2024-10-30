@@ -178,6 +178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 30
   item: {fileID: 8425085959519303996, guid: 9eaae354592a2cd42a0595879ea0e450, type: 3}
+  items:
+  - {fileID: 8425085959519303996, guid: 9eaae354592a2cd42a0595879ea0e450, type: 3}
+  - {fileID: 5613411234658417916, guid: 9e652b537f135174bbcd555d8421da74, type: 3}
+  - {fileID: 4584544086254452814, guid: d5f13f3b633cf324389cef27e520bad9, type: 3}
 --- !u!1 &4323051057360911083
 GameObject:
   m_ObjectHideFlags: 0

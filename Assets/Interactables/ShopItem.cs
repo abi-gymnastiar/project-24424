@@ -12,9 +12,14 @@ public class ShopItem : Interactables
     private GameObject priceTag;
     private TextMesh textMesh;
 
+    public GameObject[] items;
+
     // Start is called before the first frame update
     void Start()
     {
+        // pick a random item from the list
+        item = items[Random.Range(0, items.Length)];
+
         buffEffects = item.GetComponent<BuffEffects>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = buffEffects.buffSprite;
