@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     private float collCrouchingHeight = 0.5f;
     private float collCrouchingOffset = -0.15f;
 
+    public int jumpCount = 2; // 1 for single jump, 2 for double jump, etc.
+    private int currentJumpCount = 0;
+
     public int damageBuff = 0;
     public int coins = 0;
     // text UI for coins using legacy UI
@@ -82,21 +85,26 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded())
         {
             coyoteCounter = coyoteTime;
+            currentJumpCount = 0;
         }
         else
         {
             coyoteCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump") && coyoteCounter > 0f)
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            if (coyoteCounter > 0f || (currentJumpCount > 0 && currentJumpCount < jumpCount))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                Debug.Log("Jumping... currentJump = " + currentJumpCount);
+            }
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
+            currentJumpCount++;
             coyoteCounter = 0f;
         }
 

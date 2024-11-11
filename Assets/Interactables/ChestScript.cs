@@ -16,7 +16,7 @@ public class ChestScript : Interactables
     {
         // Get playercontroller from the scene
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         textMesh = transform.GetChild(0).GetComponent<TextMesh>();
         textMesh.text = "$" + price.ToString();
     }

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 874464315512877245, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_Name
-      value: SpeedBuff Variant
+      value: DoubleJumpBuff
       objectReference: {fileID: 0}
     - target: {fileID: 3400797409624692241, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,58 +54,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.08
+      value: 0.15625
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.11
+      value: 0.203125
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.8
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5206613616488315218, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8132cc5555d6162448f98eb6e45c06b7, type: 3}
+      objectReference: {fileID: 21300000, guid: d7f20ebc882682b46a9723ad631ced37, type: 3}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.08
+      value: 0.15625
       objectReference: {fileID: 0}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.11
+      value: 0.203125
       objectReference: {fileID: 0}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.8
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 9016578754960776103, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: buffEffects
       value: 
-      objectReference: {fileID: 2467230922278029975}
+      objectReference: {fileID: 7252848776015945393}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 874464315512877245, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2467230922278029975}
+      addedObject: {fileID: 7252848776015945393}
   m_SourcePrefab: {fileID: 100100000, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
 --- !u!1 &4584544086254452814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 874464315512877245, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
   m_PrefabInstance: {fileID: 3728182413939372275}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2467230922278029975
+--- !u!114 &7252848776015945393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4584544086254452814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b915aab7c32ba4f9b199c8b5d0afce, type: 3}
+  m_Script: {fileID: 11500000, guid: 52a8f5cf8be256748bb606aa9b6eba52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffName: 
-  buffValue: 3
-  buffSprite: {fileID: 21300000, guid: 8132cc5555d6162448f98eb6e45c06b7, type: 3}
+  buffName: DoubleJumpBuff
+  buffValue: 1
+  buffSprite: {fileID: 21300000, guid: d7f20ebc882682b46a9723ad631ced37, type: 3}
