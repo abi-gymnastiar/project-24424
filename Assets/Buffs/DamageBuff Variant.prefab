@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3400797409624692241, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3400797409624692241, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897394890904456817, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5206613616488315218, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_Sprite
@@ -66,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e6d1eb30906a6eb4d985332e1ae9fb1a, type: 3}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6406958882879513715, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016578754960776103, guid: f013dce1ebde8174694ca34f328b527e, type: 3}
       propertyPath: buffEffects
@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffName: 
-  buffValue: 0
+  buffValue: 1
   buffSprite: {fileID: 21300000, guid: e6d1eb30906a6eb4d985332e1ae9fb1a, type: 3}
