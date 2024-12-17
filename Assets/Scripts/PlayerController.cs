@@ -222,6 +222,16 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        UpdateHealth();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void UpdateCoins()
     {
         coinsText.text = coins.ToString();
