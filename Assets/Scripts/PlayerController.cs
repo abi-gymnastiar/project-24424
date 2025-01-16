@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,6 +50,9 @@ public class PlayerController : MonoBehaviour
     // coyote time
     public float coyoteTime = 0.2f;
     private float coyoteCounter;
+
+    // static event dying
+    public static event Action playerDead;
 
     void Start()
     {
@@ -228,7 +232,7 @@ public class PlayerController : MonoBehaviour
         UpdateHealth();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            playerDead?.Invoke();
         }
     }
 

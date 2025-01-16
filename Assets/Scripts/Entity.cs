@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb;
 
     private Vector3 startingScale;
+
+    public event Action OnDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,7 @@ public class Entity : MonoBehaviour
     {
         player.coins += coinsDrop;
         player.UpdateCoins();
+        OnDeath?.Invoke();
         Destroy(gameObject);
     }
 

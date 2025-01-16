@@ -8,9 +8,14 @@ public class Santoso : MonoBehaviour
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
     [SerializeField] private GameObject explosionEffect;
 
+    private Entity entity;
+
     private void Start()
     {
         aiDestinationSetter.target = GameObject.Find("Player").transform;
+        entity = GetComponent<Entity>();
+        // subscribe to the death event
+        entity.OnDeath += Death;
     }
 
     // collider enter
@@ -24,6 +29,11 @@ public class Santoso : MonoBehaviour
         {
             Explode(collision.gameObject);
         }
+    }
+
+    private void Death()
+    {
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
     }
 
     public void Explode(GameObject target)

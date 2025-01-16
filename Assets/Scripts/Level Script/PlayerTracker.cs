@@ -10,6 +10,13 @@ public class PlayerTracker : MonoBehaviour
 
     private int floorHeight = 20;
     private int floorHeightGen = 4;
+    public GameObject gameOverPanel;
+
+    // subscribe to playerDead event
+    private void OnEnable()
+    {
+        PlayerController.playerDead += PlayerDead;
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,5 +28,15 @@ public class PlayerTracker : MonoBehaviour
             tilesGenerator.y_pos += tilesGenerator.height;
             tilesGenerator.GenerateAndSmooth(floorHeightGen - 4);
         }
+    }
+
+    // player dead event
+    private void PlayerDead()
+    {
+        Debug.Log("Player dead");
+        // pause the game
+        Time.timeScale = 0;
+        
+        Instantiate(gameOverPanel, FindAnyObjectByType<Canvas>().transform);
     }
 }
